@@ -64,9 +64,10 @@ python vision_image_gen.py
 
 Use the vision_image_gen_ui.py for Streamlit Cloud sharing, in the settings just add 
 
+```bash
 [openai]
 api_key = "sk-paste-your-api-key"
-
+```
 
 
 ## Example of output
