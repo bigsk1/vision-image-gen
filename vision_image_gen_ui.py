@@ -22,13 +22,20 @@ from openai import OpenAI
 import streamlit as st
 
 
-# Sidebar for API key input
-api_key_input = st.sidebar.text_input("Enter your API key", type="password", key="api_key_sidebar")
+# Attempt to use the API key from Streamlit secrets if available, otherwise from environment variable
+api_key = st.secrets["openai"]["api_key"] if "openai" in st.secrets else os.getenv("OPENAI_API_KEY")
 
-# Prioritize the sidebar input if provided, otherwise use environment variable or default
-api_key = api_key_input if api_key_input else os.getenv("OPENAI_API_KEY", "YOUR_DEFAULT_API_KEY")
+# Sidebar input as a fallback or override
+api_key_input = st.sidebar.text_input("Enter your API key", type="password", key="api_key")
 
-client = OpenAI(api_key=api_key)
+if api_key_input:
+    api_key = api_key_input  # Override API key if sidebar input is used
+
+# Ensure there's an API key before proceeding
+if not api_key:
+    st.error("API key is required.")
+else:
+    client = OpenAI(api_key=api_key)
     
 st.title('AI Image Analyzer and Generator')
 
