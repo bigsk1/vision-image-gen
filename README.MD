@@ -8,6 +8,9 @@ Features
 -    Web Interface: Interactive web UI for easy operation.
 -    CLI: Command-line version for script or batch processing.
 
+![Vision Image Gen](https://imagizer.imageshack.com/img924/4660/6TcFez.jpg)
+
+
 ### How it Works:
  - The app first downloads the image from the provided URL or path locally and analyzes it using the pre-trained AI model gpt-4-vision-preview to generate a description.
 - You're then given the opportunity to modify this description to guide the image generation process, the original description from the vision model and your included description are used.
