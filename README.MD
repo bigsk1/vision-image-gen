@@ -40,7 +40,7 @@ Web UI
 To start the web interface, run:
 
 ```bash
-streamlit run vision_image_gen_ui.py
+streamlit run vision_image_gen_ui_local.py
 ```
 
 Navigate to the URL provided by Streamlit,  http://localhost:8501, in your web browser. Enter you Open AI API Key or Have your Open Ai Api key added to your system enviroment variables in PATH
@@ -58,6 +58,15 @@ The CLI version allows you to process images directly from your terminal.
 ```bash
 python vision_image_gen.py
 ```
+
+
+## Using Streamlit Cloud Sharing
+
+Use the vision_image_gen_ui.py for Streamlit Cloud sharing, in the settings just add 
+
+[openai]
+api_key = "sk-paste-your-api-key"
+
 
 
 ## Example of output
